@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>CivicWise Network Map</title>
+
+<!-- generic meta -->
+<meta content="CivicWise Network Map" name="author" />
+<meta name="title" content="CivicWise Network Map" />
+<meta name="description" content="Map showing CivicWise members." />
+<!-- facebook meta -->
+<meta property="og:title" content="CivicWise Network Map" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Map showing CivicWise members." />
+<meta property="og:url" content="https://civicwise.org/" />
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+<script src="L.GeoSearch/js/l.control.geosearch.js"></script>
+<script src="L.GeoSearch/js/l.geosearch.provider.openstreetmap.js"></script>
+<link rel="stylesheet" href="L.GeoSearch/css/l.geosearch.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-sidebar@0.2.0/src/L.Control.Sidebar.css" integrity="sha256-HTsKyMTzz3J72kyxXXBmPJWac+kZVX43dvyN56XeWNI=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-sidebar@0.2.0/src/L.Control.Sidebar.js" integrity="sha256-kA3Gf9vmKhjvw6ZtdXo+NiIR/nR9qK3gJYLlnhodvR0=" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button@0.0.4/src/leaflet-tag-filter-button.css" integrity="sha256-Awoe7HJPYs2zS6vV3GrqMrG99H8Tp+SIoKGUZ+zwovU=" crossorigin="anonymous">
+<!--<script src="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button@0.0.4/src/leaflet-tag-filter-button.js" integrity="sha256-18gmfppAy+5qZRc4dDapQq6q33+foLITKd3HltYrYn4=" crossorigin="anonymous"></script>-->
+<script src="js/leaflet-tag-filter-button.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.3.0/easy-button.css" integrity="sha256-ceeoylCL0ld4NwOaXf4vG0Z8pEknXXuzJ5ZV0Ir6ft4=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.3.0/easy-button.js" integrity="sha256-v8gWcTQpofOMqqgvw1LeZOBGdZ3s/kv29icpg7B6YKo=" crossorigin="anonymous"></script>
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/css/ionicons.min.css" integrity="sha256-toqtBoY/koNTgMCeGCaq3YvDEbfyJSDbCOrA0uk+BVo=" crossorigin="anonymous" />-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js" integrity="sha256-iwOC2Y7nazcGcp6/ssCIuZviWKow9gVN5ntSdgI0jQc=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" integrity="sha256-EFpFyBbuttUJtoocYzsBnERPWee2JYz4cn5nkUBjW0A=" crossorigin="anonymous" />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster.layersupport@2.0.1/dist/leaflet.markercluster.layersupport.js" integrity="sha256-emHfqMuIKagYAKMJq41Ou+gfswnbIt9nAobc5mrNa9g=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/src/leaflet-search.css" integrity="sha256-shglAIJTG86aSEHQg3eLxymTGG0nMyMRXBwGplGN1jU=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/src/leaflet-search.js" integrity="sha256-8GBcax1pfbAFk0DYW/Ly/MB6SKk9oWI16qUrnXPnIkU=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div id="sidebar">
+	<h2>leaflet-sidebar</h2>
+</div>
+
+<div id="map"></div>
+
+<script>
+// TILES: base layers
+var tilesAttr = 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
+var baseVector = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution: tilesAttr,maxNativeZoom: 18,maxZoom:22});
+
+// STYLES: markers
+var styleOut = {
+    radius: 9,
+    fillColor: "#fc0",
+    color: "#666",
+    weight: 1,
+    opacity: 0.8,
+    fillOpacity: 1
+}
+var styleOver = {
+    color: "#000",
+    weight: 5
+}
+var styleClick = {
+    color: "#666",
+    weight: 5
+}
+function resetMarkersStyle(layer) {
+	layer.eachLayer(function(l){
+		l.setStyle(styleOut);
+	});
+}
+
+// MARKERS & ICONS
+var redMarker = L.AwesomeMarkers.icon({
+	icon: 'address-card',
+	markerColor: 'red',
+	iconColor: 'white',
+	prefix: 'fa'
+});
+
+var civicFactory = L.icon({
+	iconUrl: 'images/civicfactory.png',
+	iconSize: [35,35]
+});
+
+
+// CONTENT
+// About
+var aboutCadaveres = "<header><h1 class='page-tit'>CivicWise Network Map</h1></header><div class='excerpt'><p><em>A map showing CivicWise members</em></p>";
+
+function aboutSidebar() {
+	sidebar.setContent(aboutCadaveres);
+	sidebar.show();
+}
+// image
+function imageExists(url) {
+	var img = new Image();
+	img.src = url;
+//	return img.height != 0;
+	return img.height;
+}
+function imageOutput(src,alt) { return "<figure class='sidebar-img'><img src='"+ src +"' alt='"+ alt +"' /></figure>"; }
+//fields
+//fields
+var fieldsToShow = {
+	title: {
+		name: "Name",
+		surname: "Surname"
+	},
+	address: {
+		basis: "Address",
+	},
+	typology: {
+		shortbio: "Short bio",
+		skills: "Skills",
+		languages: "Languages",
+		sociallinks: "Links"
+	}
+};
+
+function fieldsOutput(fields,geojsonLayerProperties,type,cssClass) {
+	var fieldsOutput = "";
+	var singleProperty = "";
+	var classOut = "sidebar-part";
+	if ( typeof cssClass !== 'undefined' ) { classOut += " "+cssClass; }
+	if ( type === 'header' ) {
+		for (var p in o = fields) {
+			value = geojsonLayerProperties[p]
+			if (o.hasOwnProperty(p)) {
+				fieldsOutput += value + " ";
+			}
+		}
+	return "<header class='"+classOut+"'><h3>" +fieldsOutput+ "</h3></header>";
+
+	} else {
+		fieldsOutput += "<dl class='"+classOut+"'>";
+		for (var p in o = fields) {
+			value = geojsonLayerProperties[p]
+			if (o.hasOwnProperty(p) && value != null && value != 'null' && value != '' ) {
+				fieldsOutput += "<dt>"+o[p]+"</dt><dd>"+value+"</dd>";
+			} else {
+				fieldsOutput += "<dt>"+o[p]+"</dt><dd class='no-data'>No data</dd>";
+			}
+		}
+		fieldsOutput += "</dl>";
+	}
+	return fieldsOutput;
+}
+
+// POPUP
+function popupContent(feature) {
+	var imageSrc = "images/wisers-pics/"+feature.properties.cartodb_id +".jpg";
+	//var imageAlt = "Foto aérea de "+ feature.properties.nombre_promocional;
+//	if ( imageExists(imageSrc) ) { var image = imageOutput(imageSrc,imageAlt); }
+	//var image = imageOutput(imageSrc,imageAlt);
+	var image = imageOutput(imageSrc);
+//	else { var image = ""; }
+	return image+"<header><h3>" + feature.properties.name + " " + feature.properties.surname + "</h3></header>";
+}
+
+// MAP layer
+var mapCenter = [35.02599, -42.395735];
+var map = L.map('map', {
+	center: mapCenter,
+	zoom: 3,
+	layers: [baseVector]
+});
+
+// DATA: geoJSON layers + clusters
+// The Styles (styleClick, styleOver, etc...) are currently disabled
+var clusters = L.markerClusterGroup.layerSupport({maxClusterRadius:50}),
+    group1 = L.layerGroup();
+
+$.getJSON("data/test.geojson", function(data) {
+	var dataLayer = L.geoJson(data, {
+		pointToLayer: function (feature, latlng,) {
+			if (feature.properties.pointtype.match('civicfactory')){
+				return new L.Marker(latlng, {tags: feature.properties.skillstag, icon:civicFactory});
+			} else {
+				return new L.Marker(latlng, {tags: feature.properties.skillstag, icon:redMarker});
+		}
+	},
+		onEachFeature: function(feature, layer) {
+			if( window.location.hash == '#'+layer.feature.properties.cartodb_id ) {
+				sidebar.setContent(sidebarContent(layer));
+				sidebar.show();
+				//layer.setStyle(styleClick);
+			}
+
+			layer.bindPopup(popupContent(feature),{
+				closeButton: false,
+				offset: L.point(0,-20),
+				maxWidth: 200,
+				autoPan: false
+			});
+			layer.on({
+				click: prepareSidebar,
+				mouseover: function() {
+					layer.openPopup();
+					//layer.setStyle(styleOver);
+					if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+						layer.bringToFront();
+					}
+				},
+				mouseout: function() {
+					layer.closePopup();
+					if( window.location.hash == '#'+layer.feature.properties.cartodb_id ) {
+						//layer.setStyle(styleClick);
+					} else {
+						//layer.setStyle(styleOut);
+					}
+				}
+			});
+		}
+	});
+	dataLayer.addTo(group1);
+	clusters.addLayer(group1);
+	map.addLayer(clusters);
+});
+
+clusters.checkIn(group1);
+clusters.addTo(map);
+
+// TAGS/SKILLS layer
+$.getJSON('data/test.json', function(data) {
+		var tag = L.control.tagFilterButton({
+			data: data.skillstag,
+			filterOnEveryClick: true,
+			icon: '<i class="fas fa-tags"></i>',
+		}).addTo(map);
+		jQuery('.easy-button-button').click(function() {
+		target = jQuery('.easy-button-button').not(this);
+		target.parent().find('.tag-filter-tags-container').css({
+			'display' : 'none',
+		});
+	});
+		tag.addToRelated(genres);
+		tag.update(clusters);
+		tag.enablePruneCluster(clusters);
+	});
+
+document.querySelector(".leaflet-popup-pane").addEventListener("load", function(event) {
+	var tagName = event.target.tagName,
+		popup = map._popup;
+	console.log("got load event from " + tagName);
+	// Also check if flag is already set.
+	if (tagName === "IMG" && popup && !popup._updated) {
+		popup._updated = true; // Set flag to prevent looping.
+		popup.update();
+	}
+}, true);
+
+// SIDEBAR
+var sidebar = L.control.sidebar('sidebar', {
+	closeButton: true,
+	position: 'right'
+});
+map.addControl(sidebar);
+
+setTimeout(function() {
+	if( window.location.hash === '#' || window.location.hash === '' ) {
+		aboutSidebar();
+	}
+}, 500);
+
+map.on('click', function () {
+	sidebar.hide();
+	window.location.hash = '';
+})
+L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+	window.location.hash = '';
+});
+
+function sidebarContent(layer) {
+	// link to About cadaveres
+	linkAbout = "<div class='btn-bar'><a class='cadaver-btn' href='#' onClick='jQuery(aboutSidebar())'><span class='icon icon-info'></span> About CivicWise Network Map</a></div>";
+	// sidebar fields
+	title = fieldsOutput(fieldsToShow.title,layer.feature.properties,"header");
+	subtitle = fieldsOutput(fieldsToShow.subtitle,layer.feature.properties,"list");
+	address = fieldsOutput(fieldsToShow.address,layer.feature.properties,"list","part-bordered");
+	numbers = fieldsOutput(fieldsToShow.numbers,layer.feature.properties,"list","part-bordered");
+	actors = fieldsOutput(fieldsToShow.actors,layer.feature.properties,"list","part-bordered");
+	typology = fieldsOutput(fieldsToShow.typology,layer.feature.properties,"list","part-bordered");
+	source = fieldsOutput(fieldsToShow.source,layer.feature.properties,"list","part-bordered");
+	// sidebar image
+	var imageSrc = "images/wisers-pics/"+layer.feature.properties.cartodb_id +".jpg";
+	var imageAlt = layer.feature.properties.name + " " + layer.feature.properties.surname + " picture" ;
+//	if ( imageExists(imageSrc) != 0 ) { var image = imageOutput(imageSrc,imageAlt); }
+	var image = imageOutput(imageSrc,imageAlt);
+//	else { var image = "HAR!"; }
+	return linkAbout+title+subtitle+image+address+typology+numbers+actors+source;
+}
+function prepareSidebar(e) {
+	var layer = e.target;
+	//resetMarkersStyle(dataLayer);
+	//layer.setStyle(styleClick);
+
+	/* bringToFront function disabled as otherwise it breaks the appearance of the content in the sidebar
+	if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		layer.bringToFront();
+	}*/
+
+
+	sidebar.setContent(sidebarContent(layer));
+	if ( !sidebar.isVisible() ) {
+		sidebar.toggle();
+	}
+	window.location.hash = layer.feature.properties.cartodb_id;
+}
+
+</script>
+</body>
+</html>
