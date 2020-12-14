@@ -231,7 +231,7 @@
 			clusters.addLayer(group1);
 			map.addLayer(clusters);
 		}
-		$.getJSON("/data/mappafanano.geojson", function (data) { addDataToMap(data, styleOut); });
+		$.getJSON("data/mappafanano.geojson", function (data) { addDataToMap(data, styleOut); });
 
 		// MAP layer
 		var mapCenter = [44.2077372, 10.7938365 ];
@@ -241,12 +241,6 @@
 			layers: [baseVector]
 		});
 
-		// ADD CW LOGO
-		var credctrl = L.controlCredits({
-			image: "images/cwlogo.png",
-			link: "https://www.civicwise.org/",
-			text: "Interactive mapping<br/>by CivicWise"
-		}).addTo(map);
 
 		// SIDEBAR
 		var sidebar = L.control.sidebar('sidebar', {
