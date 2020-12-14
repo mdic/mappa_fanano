@@ -231,7 +231,7 @@
 			clusters.addLayer(group1);
 			map.addLayer(clusters);
 		}
-		$.getJSON("./data/mappafanano.geojson", function (data) { addDataToMap(data, styleOut); });
+		$.getJSON("/data/mappafanano.geojson", function (data) { addDataToMap(data, styleOut); });
 
 		// MAP layer
 		var mapCenter = [44.2077372, 10.7938365 ];
