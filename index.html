@@ -212,9 +212,9 @@
 						mouseover: function () {
 							layer.openPopup();
 							//layer.setStyle(styleOver);
-							if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-								layer.bringToFront();
-							}
+							//if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+							//	layer.bringToFront();
+							//}
 						},
 						mouseout: function () {
 							layer.closePopup();
@@ -228,6 +228,238 @@
 				}
 			});
 			singleMarker.addTo(group1);
+
+// AUDIO CLIP 1
+			var marker_audio1 = L.marker(
+				[44.2077372, 10.7938365],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio1 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio1.setIcon(icon_audio1);
+
+
+			var popup_audio1 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio1 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Ennio Gambaiani</h2><br/><iframe src="https://archive.org/download/estratto-ennio-gambaiani/estratto%20Ennio%20Gambaiani.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio1.setContent(html_audio1);
+
+
+			marker_audio1.bindPopup(popup_audio1)
+				;
+			
+// AUDIO CLIP 2
+				var marker_audio2 = L.marker(
+				[44.1517111, 10.774875125688247],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio2 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio2.setIcon(icon_audio2);
+
+
+			var popup_audio2 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio2 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Luciano Lanzi</h2><br/><iframe src="https://archive.org/download/estratto-luciano-lanzi/estratto%20Luciano%20Lanzi.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio2.setContent(html_audio2);
+
+
+			marker_audio2.bindPopup(popup_audio2)
+				;
+
+
+// AUDIO CLIP 3
+			var marker_audio3 = L.marker(
+				[44.2077372, 10.7938365],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio3 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio3.setIcon(icon_audio2);
+
+
+			var popup_audio3 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio3 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Giacomo Rocchi - parte 1</h2><br/><iframe src="https://archive.org/download/estratto-giacomo-rocchi/estratto%20Giacomo%20Rocchi%201.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio3.setContent(html_audio3);
+
+
+			marker_audio3.bindPopup(popup_audio3)
+				;
+
+// AUDIO CLIP 4
+			var marker_audio4 = L.marker(
+				[44.2077372, 10.7938365],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio4 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio4.setIcon(icon_audio4);
+
+
+			var popup_audio4 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio4 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Giacomo Rocchi - parte 2</h2><br/><iframe src="https://archive.org/download/estratto-giacomo-rocchi/estratto%20Giacomo%20Rocchi%202.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio4.setContent(html_audio4);
+
+
+			marker_audio4.bindPopup(popup_audio4)
+				;
+
+// AUDIO CLIP 5
+			var marker_audio5 = L.marker(
+				[44.2649161, 10.5155857],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio5 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio5.setIcon(icon_audio5);
+
+
+			var popup_audio5 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio5 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Enrico Mescoli - parte 1</h2><br/><iframe src="https://archive.org/download/estratto-enrico-mescoli-2/estratto%20enrico%20Mescoli%201.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio5.setContent(html_audio5);
+
+
+			marker_audio5.bindPopup(popup_audio5)
+				;
+	
+// AUDIO CLIP 6
+			var marker_audio6 = L.marker(
+				[44.295555, 10.570198],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+			var icon_audio6 = L.AwesomeMarkers.icon({
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio6.setIcon(icon_audio6);
+
+
+			var popup_audio6 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio6 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Enrico Mescoli - parte 2</h2><br/><iframe src="https://archive.org/download/estratto-enrico-mescoli-2/estratto%20Enrico%20Mescoli%202.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio6.setContent(html_audio6);
+
+
+			marker_audio6.bindPopup(popup_audio6)
+				;
+
+// AUDIO CLIP 7
+			var marker_audio7 = L.marker(
+				[44.295555, 10.570198],
+				{
+					icon: new L.Icon.Default()
+				}
+			).addTo(group1);
+
+
+
+				icon: 'microphone-alt',
+				iconColor: 'white',
+				markerColor: 'green',
+				prefix: 'fa',
+				extraClasses: 'fa-rotate-0'
+			});
+			marker_audio7.setIcon(icon_audio6);
+
+
+			var popup_audio7 = L.popup({
+				maxWidth: '600'
+
+			});
+
+
+			var html_audio7 = $(`<div id="html_audio1" style="width: 100.0%; height: 100.0%;"><h2>Iole Ghibellini</h2><br/><iframe src="https://archive.org/download/estratto-iole-ghibellini/estratto%20Iole%20Ghibellini.mp3" width="500" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe></div>`)[0];
+			popup_audio7.setContent(html_audio7);
+
+
+			marker_audio7.bindPopup(popup_audio7)
+				;
+
 			clusters.addLayer(group1);
 			map.addLayer(clusters);
 		}
